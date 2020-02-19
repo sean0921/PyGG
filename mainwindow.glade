@@ -7,6 +7,7 @@
     <property name="title" translatable="yes">Mille-Crepe Mapping Assistant</property>
     <property name="default_width">800</property>
     <property name="default_height">600</property>
+    <property name="icon">millecrepe.png</property>
     <signal name="destroy" handler="onDestroy" swapped="no"/>
     <child>
       <placeholder/>
@@ -173,7 +174,7 @@
                   <object class="GtkLabel" id="mcma_community_label">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">社群</property>
+                    <property name="label" translatable="yes">文件</property>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -182,12 +183,38 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkButton" id="mcma_gmt_docs">
-                    <property name="label" translatable="yes">GMT 操作手冊</property>
+                  <object class="GtkButtonBox">
                     <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">True</property>
-                    <signal name="clicked" handler="on_mcma_gmt_docs_clicked" swapped="no"/>
+                    <property name="can_focus">False</property>
+                    <property name="layout_style">start</property>
+                    <child>
+                      <object class="GtkButton" id="mcma_gmt_docs">
+                        <property name="label" translatable="yes">GMT 操作手冊</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <signal name="clicked" handler="on_mcma_gmt_docs_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="mcma_about">
+                        <property name="label" translatable="yes">關於</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <signal name="clicked" handler="on_mcma_about_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="expand">True</property>
+                        <property name="fill">True</property>
+                        <property name="position">1</property>
+                      </packing>
+                    </child>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -210,123 +237,23 @@
           </packing>
         </child>
         <child>
-          <object class="GtkButtonBox" id="mcma_sub_box1">
+          <object class="GtkComboBoxText" id="mcma_gmt_commands">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="spacing">5</property>
-            <property name="layout_style">start</property>
-            <child>
-              <object class="GtkButton" id="mcma_gmt_gmtset">
-                <property name="label" translatable="yes">gmtset</property>
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">True</property>
-                <signal name="clicked" handler="on_mcma_gmt_gmtset_clicked" swapped="no"/>
-              </object>
-              <packing>
-                <property name="expand">True</property>
-                <property name="fill">True</property>
-                <property name="position">0</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkButton" id="mcma_gmt_pscoast">
-                <property name="label" translatable="yes">pscoast</property>
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">True</property>
-                <signal name="clicked" handler="on_mcma_gmt_pscoast_clicked" swapped="no"/>
-              </object>
-              <packing>
-                <property name="expand">True</property>
-                <property name="fill">True</property>
-                <property name="position">1</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkButton" id="mcma_gmt_psbasemap">
-                <property name="label" translatable="yes">psbasemap</property>
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">True</property>
-                <signal name="clicked" handler="on_mcma_gmt_psbasemap_clicked" swapped="no"/>
-              </object>
-              <packing>
-                <property name="expand">True</property>
-                <property name="fill">True</property>
-                <property name="position">2</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkButton" id="mcma_gmt_psxy">
-                <property name="label" translatable="yes">psxy</property>
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">True</property>
-                <signal name="clicked" handler="on_mcma_gmt_psxy_clicked" swapped="no"/>
-              </object>
-              <packing>
-                <property name="expand">True</property>
-                <property name="fill">True</property>
-                <property name="position">3</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkButton" id="mcma_gmt_pssac">
-                <property name="label" translatable="yes">pssac</property>
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">True</property>
-                <signal name="clicked" handler="on_mcma_gmt_pssac_clicked" swapped="no"/>
-              </object>
-              <packing>
-                <property name="expand">True</property>
-                <property name="fill">True</property>
-                <property name="position">4</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkButton" id="mcma_gmt_pstext">
-                <property name="label" translatable="yes">pstext</property>
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">True</property>
-                <signal name="clicked" handler="on_mcma_gmt_pstext_clicked" swapped="no"/>
-              </object>
-              <packing>
-                <property name="expand">True</property>
-                <property name="fill">True</property>
-                <property name="position">5</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkButton" id="mcma_gmtcustom">
-                <property name="label" translatable="yes">手動輸入</property>
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">True</property>
-                <signal name="clicked" handler="on_mcma_gmtcustom_clicked" swapped="no"/>
-              </object>
-              <packing>
-                <property name="expand">True</property>
-                <property name="fill">True</property>
-                <property name="position">6</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkButton" id="mcma_gmt_end">
-                <property name="label" translatable="yes">結束畫布</property>
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">True</property>
-                <signal name="clicked" handler="on_mcma_gmt_end_clicked" swapped="no"/>
-              </object>
-              <packing>
-                <property name="expand">True</property>
-                <property name="fill">True</property>
-                <property name="position">7</property>
-              </packing>
-            </child>
+            <property name="active">0</property>
+            <property name="active_id">0</property>
+            <items>
+              <item id="0" translatable="yes">&lt;在此處選擇 gmt 指令&gt;</item>
+              <item id="1" translatable="yes">gmtset</item>
+              <item id="2" translatable="yes">pscoast</item>
+              <item id="3" translatable="yes">psbasemap</item>
+              <item id="4" translatable="yes">psxy</item>
+              <item id="5" translatable="yes">pssac</item>
+              <item id="6" translatable="yes">pstext</item>
+              <item id="7" translatable="yes">手動輸入指令</item>
+              <item id="8" translatable="yes">結束畫布</item>
+            </items>
+            <signal name="changed" handler="on_mcma_gmt_commands_changed" swapped="no"/>
           </object>
           <packing>
             <property name="expand">False</property>
