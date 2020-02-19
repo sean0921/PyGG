@@ -1,4 +1,6 @@
 import gi
+import webbrowser
+
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk 
 
@@ -23,6 +25,7 @@ class Handler:
 
     def on_mcma_gmt_docs_clicked(self, *args):
         print("mcma_gmt_docs is clicked!")
+        webbrowser.open("https://docs.generic-mapping-tools.org/6.0/index.html")
 
     def on_mcma_gmt_gmtset_clicked(self, *args):
         print("mcma_gmt_gmtset is clicked!")

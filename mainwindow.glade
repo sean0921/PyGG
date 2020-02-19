@@ -183,7 +183,7 @@
                 </child>
                 <child>
                   <object class="GtkButton" id="mcma_gmt_docs">
-                    <property name="label" translatable="yes">GMT 中文手冊</property>
+                    <property name="label" translatable="yes">GMT 操作手冊</property>
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
