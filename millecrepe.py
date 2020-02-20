@@ -14,7 +14,6 @@ WHERE_AM_I = abspath(dirname(__file__))
 def main(argv=None):
     class Handler:
         def onDestroy(self, *args):
-            print("main program is going to be destroyed!")
             Gtk.main_quit()
 
         def on_mcma_gmt_begin_clicked(self, *args):
@@ -41,10 +40,6 @@ def main(argv=None):
             about_dialog.run()
             about_dialog.hide()
 
-#        def on_mcma_about_dialog_destroy(self, *args):
-#            print("mcma_about_dialog is going to be destroyed!")
-#            about_dialog.destroy()
-
         def on_mcma_gmt_commands_changed(self, combo):
             tree_iter = combo.get_active_iter()
             if tree_iter is not None:
@@ -52,33 +47,11 @@ def main(argv=None):
                 name, row_id = model[tree_iter][:2]
                 #print(model[tree_iter][:])
                 print("Selected: name=%s, ID=%s" % (name, row_id))
+                if name == "gmtset":
+                    print("gmtset!")
             else:
                 entry = combo.get_child()
                 print("Entered: %s" % entry.get_text())
-
-#        def on_mcma_gmt_gmtset_clicked(self, *args):
-#            print("mcma_gmt_gmtset is clicked!")
-#
-#        def on_mcma_gmt_pscoast_clicked(self, *args):
-#            print("mcma_gmt_pscoast is clicked!")
-#
-#        def on_mcma_gmt_psbasemap_clicked(self, *args):
-#            print("mcma_gmt_psbasemap is clicked!")
-#
-#        def on_mcma_gmt_psxy_clicked(self, *args):
-#            print("mcma_gmt_psxy is clicked!")
-#
-#        def on_mcma_gmt_pssac_clicked(self, *args):
-#            print("mcma_gmt_pssac is clicked!")
-#
-#        def on_mcma_gmt_pstext_clicked(self, *args):
-#            print("mcma_gmt_pstext is clicked!")
-#
-#        def on_mcma_gmtcustom_clicked(self, *args):
-#            print("mcma_gmtcustom is clicked!")
-#
-#        def on_mcma_gmt_end_clicked(self, *args):
-#            print("mcma_gmt_end is clicked!")
 
     ### Example
     #    def onButtonPressed(self, button):
