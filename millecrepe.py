@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import gi
 from os.path import abspath, dirname, join
 import webbrowser
