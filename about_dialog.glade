@@ -9,7 +9,7 @@
     <property name="program_name">Mille-Crepe Mapping Assistant</property>
     <property name="version">2020.220.0-proto</property>
     <property name="copyright" translatable="yes">sean0921@github</property>
-    <property name="comments" translatable="yes">Designing PyGObject Program for Applying GMT 5 (or later) commands.</property>
+    <property name="comments" translatable="yes">Designing PyGObject Program for Applying GMT commands.</property>
     <property name="website">https://github.com/sean0921/millecrepe</property>
     <property name="website_label" translatable="yes">GitHub Repo</property>
     <property name="license" translatable="yes">這個程式沒有任何擔保。
